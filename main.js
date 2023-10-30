@@ -16,15 +16,19 @@ function addBookToLibrary(book) {
 
 
 // Manually create couple of books for testing and styling
-const atomicHabits = new Book("Atomic Habits", "James Clear", "Productivity", false);
+const atomicHabits = new Book("Atomic Habits", "James Clear", "Self Help", false);
 const nameOfTheWind = new Book("The Name Of The Wind", "Patrick Rothfuss", "Fantasy", true);
 const aWiseMansTale = new Book("A Wise Mans Tale", "Patrick Rothfuss", "Fantasy", false);
 const theEverythingStore = new Book("The Everything Store", "Brad Stone", "Biography", true);
+const bloodSweatAndPixels = new Book("Blood Sweat And Pixels", "Jason Schreier", "Business", true);
+const theSutleArtOfNotGivingAFuck = new Book("The Subtle Art Of Not Giving A F*ck", "Mark Manson", "Self Help", false)
 
 addBookToLibrary(atomicHabits);
 addBookToLibrary(nameOfTheWind);
 addBookToLibrary(aWiseMansTale);
 addBookToLibrary(theEverythingStore);
+addBookToLibrary(bloodSweatAndPixels);
+addBookToLibrary(theSutleArtOfNotGivingAFuck);
 
 console.table(myLibrary);
 
