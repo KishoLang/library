@@ -43,14 +43,18 @@ function displayBook(i) {
 // ADD NEW BOOK --------------------
 const addBookBtn = document.querySelector(".add-button");
 const modal = document.getElementById("modal");
+const returnBtn = document.getElementById("return-btn");
 const form = document.getElementById("add-book-form");
 const formTitle = document.getElementById("new-title");
 const formAuthor = document.getElementById("new-author");
 const formGenre = document.getElementById("new-genre");
 
+let modalOpen = false;
 
 addBookBtn.addEventListener("mousedown", () => {
     modal.showModal();
+    modalOpen = true;
+    console.log(modalOpen);
 });
 
 form.addEventListener("submit", (e) => {
@@ -60,6 +64,12 @@ form.addEventListener("submit", (e) => {
     modal.close();
     form.reset();
 });
+
+returnBtn.addEventListener("mousedown", () => {
+    modal.close();
+    form.reset();
+});
+
 // ------------------------------
 
 
