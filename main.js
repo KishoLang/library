@@ -20,6 +20,11 @@ function addBookToLibrary(title, author, genre, read) {
 function displayBook(i) {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
+    // Create Remove Button
+    const removeBtn = document.createElement("img");
+    removeBtn.classList.add("remove-btn");
+    removeBtn.src = "images/RemoveBtn.svg";
+    cardDiv.appendChild(removeBtn);
     // Create Title
     const title = document.createElement("h3");
     title.classList.add("card-title");
@@ -39,6 +44,7 @@ function displayBook(i) {
     // Lastly append the card with the book info to the container div
     libraryContainer.appendChild(cardDiv);
 }
+
 
 // ADD NEW BOOK --------------------
 const addBookBtn = document.querySelector(".add-button");
@@ -72,6 +78,7 @@ returnBtn.addEventListener("mousedown", () => {
 
 // ------------------------------
 
+// SELECT BOOK TO REMOVE
 
 
 
