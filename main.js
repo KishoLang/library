@@ -46,6 +46,20 @@ function displayBook(i) {
     genre.classList.add("card-genre");
     genre.textContent = myLibrary[i].genre;
     cardDiv.appendChild(genre);
+    // Create Read Toggle
+    const toggleDiv = document.createElement("div");
+    toggleDiv.classList.add("toggle");
+    const read = document.createElement("label");
+    read.classList.add("read-label");
+    const readInput = document.createElement("input");
+    readInput.classList.add("read-checkbox");
+    readInput.setAttribute("type", "checkbox");
+    const readSpan = document.createElement("span");
+    readSpan.classList.add("slider");
+    read.appendChild(readInput);
+    read.appendChild(readSpan);
+    toggleDiv.appendChild(read);
+    cardDiv.append(toggleDiv);
 
     // Append the card with the book info to the container div
     libraryContainer.appendChild(cardDiv);
@@ -61,9 +75,21 @@ function displayBook(i) {
     deleteBtn.addEventListener("click", () => {
         let cardString = deleteBtn.nextSibling.textContent;
         let cardIndex = myLibrary.findIndex(e => e.title == cardString);
-        console.log(cardIndex);
         myLibrary.splice(cardIndex, 1);
         deleteBtn.parentNode.remove();
+        console.log(myLibrary);
+    });
+    readInput.addEventListener("change", () => {
+        let cardString = deleteBtn.nextSibling.textContent;
+        let cardIndex = myLibrary.findIndex(e => e.title == cardString);
+        if (readInput.checked) {
+            cardDiv.style.backgroundColor = "lightgreen";
+            myLibrary[cardIndex].read = true;
+        } else {
+            cardDiv.style.backgroundColor = "salmon";
+            myLibrary[cardIndex].read = false;
+        }
+
         console.log(myLibrary);
     });
 }
