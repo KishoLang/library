@@ -1,3 +1,4 @@
+console.time()
 // Library Array
 const myLibrary = [];
 const libraryContainer = document.querySelector(".library-container");
@@ -20,11 +21,16 @@ function addBookToLibrary(title, author, genre, read) {
 function displayBook(i) {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
-    // Create Remove Button
-    const removeBtn = document.createElement("img");
-    removeBtn.classList.add("remove-btn");
-    removeBtn.src = "images/RemoveBtn.svg";
-    cardDiv.appendChild(removeBtn);
+    // Create Edit Button
+    const editBtn = document.createElement("img");
+    editBtn.classList.add("edit-btn");
+    editBtn.src = "images/dots-vertical.svg";
+    cardDiv.appendChild(editBtn);
+    // Create Delete PopUp
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.textContent = "Remove";
+    cardDiv.appendChild(deleteBtn);
     // Create Title
     const title = document.createElement("h3");
     title.classList.add("card-title");
@@ -41,14 +47,31 @@ function displayBook(i) {
     genre.textContent = myLibrary[i].genre;
     cardDiv.appendChild(genre);
 
-    // Lastly append the card with the book info to the container div
+    // Append the card with the book info to the container div
     libraryContainer.appendChild(cardDiv);
+
+    // Add Event Listeners to newly created elements
+    editBtn.addEventListener("mousedown", () => {
+        if (deleteBtn.style.visibility == "hidden") {
+            deleteBtn.style.visibility = "visible";
+        } else {
+            deleteBtn.style.visibility = "hidden";
+        }
+    });
+    deleteBtn.addEventListener("click", () => {
+        let cardString = deleteBtn.nextSibling.textContent;
+        let cardIndex = myLibrary.findIndex(e => e.title == cardString);
+        console.log(cardIndex);
+        myLibrary.splice(cardIndex, 1);
+        deleteBtn.parentNode.remove();
+        console.log(myLibrary);
+    });
 }
 
 
 // ADD NEW BOOK --------------------
 const addBookBtn = document.querySelector(".add-button");
-const modal = document.getElementById("modal");
+const modal = document.getElementById("form-modal");
 const returnBtn = document.getElementById("return-btn");
 const form = document.getElementById("add-book-form");
 const formTitle = document.getElementById("new-title");
@@ -60,7 +83,6 @@ let modalOpen = false;
 addBookBtn.addEventListener("mousedown", () => {
     modal.showModal();
     modalOpen = true;
-    console.log(modalOpen);
 });
 
 form.addEventListener("submit", (e) => {
@@ -69,6 +91,7 @@ form.addEventListener("submit", (e) => {
     displayBook(myLibrary.length - 1);
     modal.close();
     form.reset();
+    console.table(myLibrary);
 });
 
 returnBtn.addEventListener("mousedown", () => {
@@ -77,10 +100,6 @@ returnBtn.addEventListener("mousedown", () => {
 });
 
 // ------------------------------
-
-// SELECT BOOK TO REMOVE
-
-
 
 // Manually create couple of books for testing and styling
 addBookToLibrary("Atomic Habits", "James Clear", "Self Help", false);
@@ -93,4 +112,6 @@ addBookToLibrary("The Subtle Art Of Not Giving A F*ck", "Mark Manson", "Self Hel
 for (let i = 0; i < myLibrary.length; i++) {
     displayBook(i);
 }
-// Manual DONE!
+//-------------
+
+console.timeEnd();
