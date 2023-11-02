@@ -43,7 +43,7 @@ body {
 }
 
 .library-container {
-    width: 90vw;
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
@@ -234,4 +234,17 @@ button:active {
     transform: translateX(19px);
   }
   
-  
+  footer {
+    position: absolute;
+    bottom: 15px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: black;
+  }
+
+  footer a:hover {
+    cursor: pointer;
+    color: salmon;
+  }
