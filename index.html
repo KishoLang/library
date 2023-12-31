@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Library Tracker</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <div class="logo-img"><img src="images/library.svg" alt="logo image"></div>
-        <div class="add-button"><img src="images/AddButton.svg" alt="button image"></div>
+      <div class="logo-img">
+        <img src="images/library.svg" alt="logo image" />
+      </div>
+      <div class="add-button">
+        <img src="images/AddButton.svg" alt="button image" />
+      </div>
+    </div>
+    <div class="creator-tag">
+      <a href="https://github.com/kisholang"
+        ><span id="footer-text">made by kisholang</span></a
+      >
     </div>
     <div class="library-container">
-        <!--Add books here-->
+      <!--Add books here-->
     </div>
     <dialog id="form-modal">
-        <div id="return-btn">x</div>
-        <form id="add-book-form" action="" method="get">
-            <div class="form-container">
-                <div class="form-row">
-                    <label for="new-title">Title</label>
-                    <input class="input-field" type="text" id="new-title" name="new-title" required>
-                </div>
-                <div class="form-row">
-                    <label for="new-author">Author</label>
-                    <input class="input-field" type="text" id="new-author" name="new-author" required>
-                </div>
-                <div class="form-row">
-                    <label for="new-genre">Genre</label>
-                    <input class="input-field" type="text" id="new-genre" name="new-genre" required>
-                </div>
-                <div class="form-row">
-                    <button type="submit">Add Book</button>
-                </div>
-            </div>
-        </form>
+      <div id="return-btn">x</div>
+      <form id="add-book-form" action="" method="get">
+        <div class="form-container">
+          <div class="form-row">
+            <label for="new-title">Title</label>
+            <input
+              class="input-field"
+              type="text"
+              id="new-title"
+              name="new-title"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="new-author">Author</label>
+            <input
+              class="input-field"
+              type="text"
+              id="new-author"
+              name="new-author"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="new-genre">Genre</label>
+            <input
+              class="input-field"
+              type="text"
+              id="new-genre"
+              name="new-genre"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <button type="submit">Add Book</button>
+          </div>
+        </div>
+      </form>
     </dialog>
-    <footer><a href="https://github.com/kisholang"><span id="footer-text">Copyright © 2023 kisholang</span></a></footer>
+    <footer></footer>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   padding-top: 5vh;
-  padding-bottom: 10vh;
+  padding-bottom: 1vh;
   justify-content: center;
 }
 
@@ -40,6 +40,19 @@ body {
     rotate: 0deg;
     scale: 1;
   }
+}
+
+.creator-tag {
+  padding-bottom: 2vh;
+}
+
+.creator-tag a {
+  text-decoration: none;
+  color: black;
+}
+
+.creator-tag a:hover {
+  color: #90ee90;
 }
 
 .library-container {
@@ -230,19 +243,4 @@ input:checked + .slider:before {
   -webkit-transform: translateX(19px);
   -ms-transform: translateX(19px);
   transform: translateX(19px);
-}
-
-footer {
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-}
-
-footer a {
-  text-decoration: none;
-  color: black;
-}
-
-footer a:hover {
-  cursor: pointer;
-  color: salmon;
 }
